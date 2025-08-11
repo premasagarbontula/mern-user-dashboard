@@ -29,4 +29,11 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
 });
 
+app.use(cors({
+  origin: [
+    "https://your-app.railway.app",
+    "http://localhost:5173" // Vite dev server
+  ]
+}));
+
 module.exports = app;
